@@ -1,0 +1,13 @@
+[Desktop Entry]
+Version=1.0
+Name=CALIBUR Core
+Comment=CALIBUR P2P Cryptocurrency
+Comment[fr]=CALIBUR, monnaie virtuelle cryptographique pair à pair
+Comment[tr]=CALIBUR, eşten eşe kriptografik sanal para birimi
+Exec=calibur-qt %u
+Terminal=false
+Type=Application
+Icon=calibur128
+MimeType=x-scheme-handler/calibur;
+Categories=Office;Finance;
+StartupWMClass=Calibur-qt

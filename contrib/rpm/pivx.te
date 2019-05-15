@@ -1,0 +1,81 @@
+policy_module(calibur, 1.100.1)
+
+########################################
+#
+# Declarations
+#
+
+type calibur_t;
+type calibur_exec_t;
+init_daemon_domain(calibur_t, calibur_exec_t)
+
+permissive calibur_t;
+
+type calibur_initrc_exec_t;
+init_script_file(calibur_initrc_exec_t)
+
+type calibur_conf_t;
+files_type(calibur_conf_t)
+
+type calibur_var_lib_t;
+files_type(calibur_var_lib_t)
+
+type calibur_var_run_t;
+files_type(calibur_var_run_t)
+
+type calibur_port_t;
+corenet_port(calibur_port_t)
+
+########################################
+#
+# calibur local policy
+#
+allow calibur_t self:process { fork };
+
+allow calibur_t self:fifo_file rw_fifo_file_perms;
+allow calibur_t self:unix_stream_socket create_stream_socket_perms;
+
+manage_dirs_pattern(calibur_t, calibur_conf_t, calibur_conf_t)
+manage_files_pattern(calibur_t, calibur_conf_t, calibur_conf_t)
+
+manage_dirs_pattern(calibur_t, calibur_var_lib_t, calibur_var_lib_t)
+manage_files_pattern(calibur_t, calibur_var_lib_t, calibur_var_lib_t)
+files_var_lib_filetrans(calibur_t, calibur_var_lib_t, { dir file })
+
+manage_dirs_pattern(calibur_t, calibur_var_run_t, calibur_var_run_t)
+manage_files_pattern(calibur_t, calibur_var_run_t, calibur_var_run_t)
+
+sysnet_dns_name_resolve(calibur_t)
+corenet_all_recvfrom_unlabeled(calibur_t)
+
+allow calibur_t self:tcp_socket create_stream_socket_perms;
+corenet_tcp_sendrecv_generic_if(calibur_t)
+corenet_tcp_sendrecv_generic_node(calibur_t)
+corenet_tcp_sendrecv_all_ports(calibur_t)
+corenet_tcp_bind_generic_node(calibur_t)
+
+gen_require(`
+    type calibur_port_t;
+')
+allow calibur_t calibur_port_t:tcp_socket name_bind;
+
+gen_require(`
+    type calibur_port_t;
+')
+allow calibur_t calibur_port_t:tcp_socket name_connect;
+
+domain_use_interactive_fds(calibur_t)
+
+files_read_etc_files(calibur_t)
+
+miscfiles_read_localization(calibur_t)
+
+sysnet_dns_name_resolve(calibur_t)
+
+allow calibur_t calibur_exec_t:file execute_no_trans;
+allow calibur_t self:process setsched;
+corecmd_exec_ls(calibur_t)
+corenet_tcp_connect_http_port(calibur_t)
+dev_read_urand(calibur_t)
+fs_getattr_xattr_fs(calibur_t)
+kernel_read_system_state(calibur_t)

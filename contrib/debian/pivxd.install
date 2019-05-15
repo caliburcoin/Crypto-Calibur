@@ -1,0 +1,3 @@
+usr/local/bin/caliburd usr/bin
+usr/local/bin/calibur-cli usr/bin
+debian/examples/calibur.conf etc/calibur

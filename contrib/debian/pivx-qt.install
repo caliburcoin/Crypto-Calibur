@@ -1,0 +1,6 @@
+usr/local/bin/calibur-qt usr/bin
+share/pixmaps/calibur32.xpm usr/share/pixmaps
+share/pixmaps/calibur16.xpm usr/share/pixmaps
+share/pixmaps/calibur128.png usr/share/pixmaps
+debian/calibur-qt.desktop usr/share/applications
+debian/calibur-qt.protocol usr/share/kde4/services/
