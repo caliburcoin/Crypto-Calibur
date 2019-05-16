@@ -271,7 +271,7 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
      //   budget.FillBlockPayee(txNew, nFees, fProofOfStake);
     //} else {
         masternodePayments.FillBlockPayee(txNew, nFees, fProofOfStake, fZCBRStake);
-    }
+    //}
 }
 
 std::string GetRequiredPaymentsString(int nBlockHeight)
