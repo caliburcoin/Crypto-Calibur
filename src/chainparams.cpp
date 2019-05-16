@@ -152,7 +152,7 @@ public:
         nMinerThreads = 0;
         nTargetTimespan = 1 * 60; // CALIBUR: 1 day
         nTargetSpacing = 1 * 60;  // CALIBUR: 1 minute
-        nMaturity = 25;
+        nMaturity = 24;
         nMasternodeCountDrift = 20;
         nMaxMoneyOut = 100000000 * COIN;
 
