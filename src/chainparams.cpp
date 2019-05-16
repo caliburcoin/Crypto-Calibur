@@ -53,13 +53,13 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("000006e294c346db8526e6455f792f5dd7e07203ad96fd54f85138f3126eb5fc")); //!< Network split here
+    (0, uint256("0x01")); //!< Network split here
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1557927515, // * UNIX timestamp of last checkpoint block
-    4271692,    // * total number of transactions between genesis and last checkpoint
+    1558007947, // * UNIX timestamp of last checkpoint block
+    400,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
-    2000        // * estimated number of transactions per day after checkpoint
+    200        // * estimated number of transactions per day after checkpoint
 };
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
@@ -67,8 +67,8 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1554669557,
-    2305594,
+    1558007947,
+    200,
     250};
 
 static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
@@ -200,9 +200,9 @@ public:
         genesis.nTime = 1557927515;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 3142345;
-		MineGenesis(genesis);
+	MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("000006e294c346db8526e6455f792f5dd7e07203ad96fd54f85138f3126eb5fc"));
+        assert(hashGenesisBlock == uint256("0x01"));
         assert(genesis.hashMerkleRoot == uint256("02e8b0a16cd4f22c3e9cb005457dc21f060eb82373be9d332443718176f4d9f2"));
 
        // vSeeds.push_back(CDNSSeedData(","));     // Primary DNS Seeder from Fuzzbawls
