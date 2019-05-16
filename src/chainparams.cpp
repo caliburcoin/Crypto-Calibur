@@ -205,10 +205,10 @@ public:
         assert(hashGenesisBlock == uint256("0000071656cb7477c0530800a770afd05cde460cc2b07d3b2803455276dee050"));
         assert(genesis.hashMerkleRoot == uint256("02e8b0a16cd4f22c3e9cb005457dc21f060eb82373be9d332443718176f4d9f2"));
 
-       // vSeeds.push_back(CDNSSeedData(","));     // Primary DNS Seeder from Fuzzbawls
-       // vSeeds.push_back(CDNSSeedData(","));    // Secondary DNS Seeder from Fuzzbawls
-       // vSeeds.push_back(CDNSSeedData(","));         // Single node address
-       // vSeeds.push_back(CDNSSeedData(",")); // Single node address
+        vSeeds.push_back(CDNSSeedData("206.189.185.119,206.189.185.119"));     // Primary DNS Seeder from Fuzzbawls
+        vSeeds.push_back(CDNSSeedData("142.93.13.10,142.93.13.10"));    // Secondary DNS Seeder from Fuzzbawls
+        vSeeds.push_back(CDNSSeedData("142.93.13.84,142.93.13.84"));         // Single node address
+        vSeeds.push_back(CDNSSeedData("142.93.13.105,142.93.13.105")); // Single node address
       //  vSeeds.push_back(CDNSSeedData(","));           // Single node address
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 28);
