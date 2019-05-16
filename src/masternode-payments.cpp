@@ -241,8 +241,8 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
             
                 LogPrint("masternode","Budget enforcement is disabled, accepting block\n");
             }
-        }
-    }
+      //  }
+    //}
 
     // If we end here the transaction was either TrxValidationStatus::InValid and Budget enforcement is disabled, or
     // a double budget payment (status = TrxValidationStatus::DoublePayment) was detected, or no/not enough masternode
