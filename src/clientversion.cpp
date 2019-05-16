@@ -13,7 +13,7 @@
  * for both caliburd and calibur-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("CALIBUR Core");
+const std::string CLIENT_NAME("Calibur Core");
 
 /**
  * Client version number
