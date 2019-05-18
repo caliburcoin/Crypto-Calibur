@@ -309,9 +309,9 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1454124731;
         genesis.nNonce = 2402015;
-	MineGenesis(genesis);
+	//MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x01"));
+        //assert(hashGenesisBlock == uint256("0x01"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
@@ -399,9 +399,9 @@ public:
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1454124731;
         genesis.nNonce = 2402015;
-	MineGenesis(genesis);
+	//MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x001"));
+        //assert(hashGenesisBlock == uint256("0x001"));
         //assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
