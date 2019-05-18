@@ -53,10 +53,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0000071656cb7477c0530800a770afd05cde460cc2b07d3b2803455276dee050")); //!< Network split here
+    (0, uint256("0x01")); //!< Network split here
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1558007947, // * UNIX timestamp of last checkpoint block
+    1558176515, // * UNIX timestamp of last checkpoint block
     400,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     200        // * estimated number of transactions per day after checkpoint
@@ -67,7 +67,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     (0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1558007947,
+    1558176515,
     200,
     250};
 
@@ -75,7 +75,7 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1454124731,
+    1558176515,
     0,
     100};
 
@@ -197,18 +197,18 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1558007947;
+        genesis.nTime = 1558176515;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 4294090;
-	//MineGenesis(genesis);
+        genesis.nNonce = 77494090;
+	MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0000071656cb7477c0530800a770afd05cde460cc2b07d3b2803455276dee050"));
-        assert(genesis.hashMerkleRoot == uint256("02e8b0a16cd4f22c3e9cb005457dc21f060eb82373be9d332443718176f4d9f2"));
+        assert(hashGenesisBlock == uint256("0x01"));
+        assert(genesis.hashMerkleRoot == uint256("0x01"));
 
         vSeeds.push_back(CDNSSeedData("206.189.185.119","206.189.185.119"));     // Primary DNS Seeder from Fuzzbawls
-        vSeeds.push_back(CDNSSeedData("142.93.13.10","142.93.13.10"));    // Secondary DNS Seeder from Fuzzbawls
-        vSeeds.push_back(CDNSSeedData("142.93.13.84","142.93.13.84"));         // Single node address
-        vSeeds.push_back(CDNSSeedData("142.93.13.105","142.93.13.105")); // Single node address
+        vSeeds.push_back(CDNSSeedData("192.241.130.15","192.241.130.15"));    // Secondary DNS Seeder from Fuzzbawls
+        vSeeds.push_back(CDNSSeedData("167.99.150.15","167.99.150.15"));         // Single node address
+        vSeeds.push_back(CDNSSeedData("159.203.191.39","159.203.191.39")); // Single node address
       //  vSeeds.push_back(CDNSSeedData(","));           // Single node address
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 28);
@@ -309,16 +309,16 @@ public:
         //! Modify the testnet genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1454124731;
         genesis.nNonce = 2402015;
-
+	MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-       // assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        assert(hashGenesisBlock == uint256("0x01"));
 
         vFixedSeeds.clear();
         vSeeds.clear();
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "calibur-testnet.seed.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "calibur-testnet.seed2.fuzzbawls.pw"));
-        vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
-        vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
+        //vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "calibur-testnet.seed.fuzzbawls.pw"));
+        //vSeeds.push_back(CDNSSeedData("fuzzbawls.pw", "calibur-testnet.seed2.fuzzbawls.pw"));
+        //vSeeds.push_back(CDNSSeedData("s3v3nh4cks.ddns.net", "s3v3nh4cks.ddns.net"));
+        //vSeeds.push_back(CDNSSeedData("88.198.192.110", "88.198.192.110"));
 
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 139); // Testnet calibur addresses start with 'x' or 'y'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 19);  // Testnet calibur script addresses start with '8' or '9'
@@ -399,9 +399,9 @@ public:
         //! Modify the regtest genesis block so the timestamp is valid for a later start.
         genesis.nTime = 1454124731;
         genesis.nNonce = 2402015;
-
+	MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        //assert(hashGenesisBlock == uint256("0x0000041e482b9b9691d98eefb48473405c0b8ec31b76df3797c74a78680ef818"));
+        assert(hashGenesisBlock == uint256("0x001"));
         //assert(hashGenesisBlock == uint256("0x4f023a2120d9127b21bbad01724fdb79b519f593f2a85b60d3d79160ec5f29df"));
 
         vFixedSeeds.clear(); //! Testnet mode doesn't have any fixed seeds.
