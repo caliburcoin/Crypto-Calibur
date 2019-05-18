@@ -200,7 +200,7 @@ public:
         genesis.nTime = 1558176515;
         genesis.nBits = 0x1e0ffff0;
         genesis.nNonce = 78430248;
-	MineGenesis(genesis);
+	//MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
         assert(hashGenesisBlock == uint256("0x000004c5d19a8d6e4b90f4a2ac3d3cba446056475c9cbc9e624d5b457c32d546"));
         assert(genesis.hashMerkleRoot == uint256("0x02e8b0a16cd4f22c3e9cb005457dc21f060eb82373be9d332443718176f4d9f2"));
