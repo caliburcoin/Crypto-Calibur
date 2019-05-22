@@ -1134,8 +1134,8 @@ MultiSend: %1</translation>
         <translation>Den här etiketten blir röd, ifall någon mottagare får en mängd som är mindre än %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Kan variera med +/- %1 upiv per inmatning.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Kan variera med +/- %1 ucbr per inmatning.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2495,7 +2495,7 @@ För att aktivera AutoMint ändra 'enablezeromint=0' till 'enablezeromint=1' i c
         <translation>SEKRETESS</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation>Mata in en mängd CBR att konvertera till zCBR</translation>
     </message>
     <message>
@@ -4930,7 +4930,7 @@ Minta antingen högre valörer (så att färre inputs behövs) eller spendera mi
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Välj zCBR att Spendera</translation>

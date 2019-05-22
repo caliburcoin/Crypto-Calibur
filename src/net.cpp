@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The CALIBUR developers
+// Copyright (c) 2015-2018 The calibur Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -1845,7 +1846,7 @@ void CExplicitNetCleanup::callCleanup()
 void RelayTransaction(const CTransaction& tx)
 {
     CDataStream ss(SER_NETWORK, PROTOCOL_VERSION);
-    ss.reserve(20000);
+    ss.reserve(10000);
     ss << tx;
     RelayTransaction(tx, ss);
 }

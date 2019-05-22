@@ -1101,8 +1101,8 @@ Adresse: %4</translation>
         <translation>Diese Bezeichnung wird rot, wenn ein Empfänger einen Betrag erhält, der kleiner ist als %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Kann um +/- %1 upiv pro Eingang variieren.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Kann um +/- %1 ucbr pro Eingang variieren.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2380,7 +2380,7 @@ Um das automatische Prägen zu aktivieren ändere 'enablezeromint=0' zu 'enablez
         <translation>PRIVATSPHÄRE</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation>Geben Sie den Betrag ein, den sie von CBR in zCBR umwandeln möchten</translation>
     </message>
     <message>
@@ -4749,7 +4749,7 @@ Präge entweder höhere Stückelungen (damit weniger Eingaben benötigt werdenn)
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Wählen Sie die zCBR aus, die Sie ausgeben möchten</translation>

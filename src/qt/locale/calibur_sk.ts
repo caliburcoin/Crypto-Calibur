@@ -1299,7 +1299,7 @@ MultiSend: %1</translation>
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     </context>
 <context>
     <name>calibur-core</name>

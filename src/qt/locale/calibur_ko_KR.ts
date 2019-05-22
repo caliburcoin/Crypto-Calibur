@@ -1106,8 +1106,8 @@ Address: %4
         <translation>받는 사람이 %1 보다 작은 금액을 받으면 라벨이 빨간색으로 변경됩니다.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Can vary +/- %1 upiv per input.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Can vary +/- %1 ucbr per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2208,7 +2208,7 @@ If AutoMint is enabled this percentage will settle around the configured AutoMin
         <source>AutoMint is currently disabled.
 To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.conf</source>
         <translation>자동 저장 기능이 현재 사용 중지되었습니다 .
-자동 변환을 사용하려면 pivotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
+자동 변환을 사용하려면 cbrotx.conf에서 'enablezeromint = 0'에서 'enablezeromint = 1'로 변경하십시오.</translation>
     </message>
 </context>
 <context>
@@ -2388,7 +2388,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
         <translation>프라이버시</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation>zCBR로 변환할 CBR 수량을 입력하세요.</translation>
     </message>
     <message>
@@ -4759,7 +4759,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>사용할 zCBR 선택</translation>

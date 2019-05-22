@@ -1106,8 +1106,8 @@ MultiSend: %1</translation>
         <translation>Этот маркер становится красным если получаемая адресатом сумма меньше, чем %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Может вариироваться +/- %1 upiv при вводе</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Может вариироваться +/- %1 ucbr при вводе</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2388,8 +2388,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
         <translation>КОНФИДЕНЦИАЛЬНОСТЬ</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Введите сумму в Piv для  конвертации в zCBR</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Введите сумму в cbr для  конвертации в zCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -4757,7 +4757,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Выберите zCBR чтобы потратить</translation>
@@ -6159,7 +6159,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
     <message>
         <source>Value is below the smallest available denomination (= 1) of zCBR</source>
-        <translation>Значение ниже наименьшего доступного номинала (= 1) zPiv</translation>
+        <translation>Значение ниже наименьшего доступного номинала (= 1) ZCBR</translation>
     </message>
     <message>
         <source>Value more than Obfuscation pool maximum allows.</source>

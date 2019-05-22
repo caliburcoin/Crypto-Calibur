@@ -50,12 +50,12 @@ public:
         return true;
     }
 
-    void StartLightZpivThread(boost::thread_group& threadGroup) {
+    void StartLightZCBRThread(boost::thread_group& threadGroup) {
         LogPrintf("%s thread start\n", "calibur-light-thread");
         threadIns = boost::thread(boost::bind(&CLightWorker::ThreadLightZCBRSimplified, this));
     }
 
-    void StopLightZpivThread() {
+    void StopLightZCBRThread() {
         threadIns.interrupt();
         LogPrintf("%s thread interrupted\n", "calibur-light-thread");
     }

@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The CALIBUR developers
+// Copyright (c) 2015-2018 The calibur Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -913,38 +914,43 @@ CAmount CBudgetManager::GetTotalBudget(int nHeight)
 
     //get block value and calculate from that
     CAmount nSubsidy = 0;
-    if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 151200) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 302399 && nHeight > Params().LAST_POW_BLOCK()) {
-        nSubsidy = 50 * COIN;
-    } else if (nHeight <= 345599 && nHeight >= 302400) {
-        nSubsidy = 45 * COIN;
-    } else if (nHeight <= 388799 && nHeight >= 345600) {
-        nSubsidy = 40 * COIN;
-    } else if (nHeight <= 431999 && nHeight >= 388800) {
+        if (nHeight == 0) {
+        nSubsidy = 0 * COIN;
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {   
+		nSubsidy = 50000 * COIN;
+    } else if (nHeight <= 100000 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 35 * COIN;
-    } else if (nHeight <= 475199 && nHeight >= 432000) {
-        nSubsidy = 30 * COIN;
-    } else if (nHeight <= 518399 && nHeight >= 475200) {
-        nSubsidy = 25 * COIN;
-    } else if (nHeight <= 561599 && nHeight >= 518400) {
-        nSubsidy = 20 * COIN;
-    } else if (nHeight <= 604799 && nHeight >= 561600) {
-        nSubsidy = 15 * COIN;
-    } else if (nHeight <= 647999 && nHeight >= 604800) {
-        nSubsidy = 10 * COIN;
-    } else if (nHeight >= Params().Zerocoin_Block_V2_Start()) {
-        nSubsidy = 10 * COIN;
-    } else {
-        nSubsidy = 5 * COIN;
+    } else if (nHeight <= 200000 && nHeight >= 100001) {
+        nSubsidy = 37 * COIN;
+    } else if (nHeight <= 300000 && nHeight >= 200001) {
+        nSubsidy = 39 * COIN;
+    } else if (nHeight <= 400000 && nHeight >= 300001) {
+        nSubsidy = 42 * COIN;
+    } else if (nHeight <= 500000 && nHeight >= 400001) {
+        nSubsidy = 44 * COIN;
+    } else if (nHeight <= 600000 && nHeight >= 500001) {
+        nSubsidy = 46 * COIN;
+    } else if (nHeight <= 700000 && nHeight >= 600001) {
+        nSubsidy = 39 * COIN;
+    } else if (nHeight <= 800000 && nHeight >= 700001) {
+        nSubsidy = 40 * COIN;
+    } else if (nHeight <= 900000 && nHeight >= 800001) {
+        nSubsidy = 41 * COIN;
+    } else if (nHeight <= 1000000 && nHeight >= 900001) {
+        nSubsidy = 42 * COIN;
+    } else if (nHeight <= 1100000 && nHeight >= 1000001) {
+        nSubsidy = 43 * COIN;
+    } else if (nHeight <= 1200000 && nHeight >= 1100001) {
+        nSubsidy = 44 * COIN;
+    } else if (nHeight <= 1300000 && nHeight >= 1200001) {
+        nSubsidy = 39 * COIN;
+    } else if (nHeight <= 4791959 && nHeight >= 1300001) {
+        nSubsidy = 12 * COIN;
+        } else {
+        nSubsidy = 4 * COIN;
     }
-
     // Amount of blocks in a months period of time (using 1 minutes per) = (60*24*30)
-    if (nHeight <= 172800) {
-        return 648000 * COIN;
-    } else {
-        return ((nSubsidy / 100) * 10) * 1440 * 30;
-    }
+        return nSubsidy;
 }
 
 void CBudgetManager::NewBlock()

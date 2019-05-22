@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The CALIBUR developers
+// Copyright (c) 2015-2018 The calibur Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -201,14 +202,22 @@ bool IsBlockValueValid(const CBlock& block, CAmount nExpectedValue, CAmount nMin
             if (nMinted > nExpectedValue) {
                 return false;
             }
-		}
+        }
     } else { // we're synced and have data so check the budget schedule
 
         //are these blocks even enabled
+        if (!IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
+            return nMinted <= nExpectedValue;
+        }
 
+        if (budget.IsBudgetPaymentBlock(nHeight)) {
+            //the value of the block is evaluated in CheckBlock
+            return true;
+        } else {
+            if (nMinted > nExpectedValue) {
                 return false;
-            
-        
+            }
+        }
     }
 
     return true;
@@ -226,8 +235,8 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
     const CTransaction& txNew = (nBlockHeight > Params().LAST_POW_BLOCK() ? block.vtx[1] : block.vtx[0]);
 
     //check if it's a budget block
-   // if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
-     //   if (budget.IsBudgetPaymentBlock(nBlockHeight)) {
+    if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS)) {
+        if (budget.IsBudgetPaymentBlock(nBlockHeight)) {
             transactionStatus = budget.IsTransactionValid(txNew, nBlockHeight);
             if (transactionStatus == TrxValidationStatus::Valid) {
                 return true;
@@ -235,14 +244,13 @@ bool IsBlockPayeeValid(const CBlock& block, int nBlockHeight)
 
             if (transactionStatus == TrxValidationStatus::InValid) {
                 LogPrint("masternode","Invalid budget payment detected %s\n", txNew.ToString().c_str());
-                //if (IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
-            } else {
+                if (IsSporkActive(SPORK_9_MASTERNODE_BUDGET_ENFORCEMENT))
                     return false;
-            
+
                 LogPrint("masternode","Budget enforcement is disabled, accepting block\n");
             }
-      //  }
-    //}
+        }
+    }
 
     // If we end here the transaction was either TrxValidationStatus::InValid and Budget enforcement is disabled, or
     // a double budget payment (status = TrxValidationStatus::DoublePayment) was detected, or no/not enough masternode
@@ -267,20 +275,20 @@ void FillBlockPayee(CMutableTransaction& txNew, CAmount nFees, bool fProofOfStak
     CBlockIndex* pindexPrev = chainActive.Tip();
     if (!pindexPrev) return;
 
-   // if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(pindexPrev->nHeight + 1)) {
-     //   budget.FillBlockPayee(txNew, nFees, fProofOfStake);
-    //} else {
+    if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(pindexPrev->nHeight + 1)) {
+        budget.FillBlockPayee(txNew, nFees, fProofOfStake);
+    } else {
         masternodePayments.FillBlockPayee(txNew, nFees, fProofOfStake, fZCBRStake);
-    //}
+    }
 }
 
 std::string GetRequiredPaymentsString(int nBlockHeight)
 {
-    //if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(nBlockHeight)) {
-     //   return budget.GetRequiredPaymentsString(nBlockHeight);
-    //} else {
+    if (IsSporkActive(SPORK_13_ENABLE_SUPERBLOCKS) && budget.IsBudgetPaymentBlock(nBlockHeight)) {
+        return budget.GetRequiredPaymentsString(nBlockHeight);
+    } else {
         return masternodePayments.GetRequiredPaymentsString(nBlockHeight);
-    //}
+    }
 }
 
 void CMasternodePayments::FillBlockPayee(CMutableTransaction& txNew, int64_t nFees, bool fProofOfStake, bool fZCBRStake)

@@ -1967,7 +1967,7 @@
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantitat</translation>

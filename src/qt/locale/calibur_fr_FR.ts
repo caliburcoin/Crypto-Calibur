@@ -1130,8 +1130,8 @@ Adresse : %4
         <translation>Ce label devient rouge si l'un des destinataires reçoit un montant inférieur à %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Peut varier de +/- %1 upiv par entrée.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Peut varier de +/- %1 ucbr par entrée.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2511,7 +2511,7 @@ Pour activer Auto-monnayage, changez 'enablezeromint = 0' en 'enablezeromint = 1
         <translation>CONFIDENTIALITÉ</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation>Entrez un montant de CBR à convertir en zCBR</translation>
     </message>
     <message>
@@ -5023,7 +5023,7 @@ S'il vous plaît soyez patient ...</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Choisir les zCBR à dépenser</translation>

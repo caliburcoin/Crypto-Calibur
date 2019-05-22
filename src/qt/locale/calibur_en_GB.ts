@@ -1134,8 +1134,8 @@ Address: %4
         <translation>This label turns red if any recipient receives an amount smaller than %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Can vary +/- %1 upiv per input.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Can vary +/- %1 ucbr per input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2495,8 +2495,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
         <translation>PRIVACY</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Enter an amount of Piv to convert to zCBR</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Enter an amount of cbr to convert to zCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -4934,7 +4934,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Select zCBR to Spend</translation>

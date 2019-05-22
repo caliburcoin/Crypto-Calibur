@@ -1467,7 +1467,7 @@ Address: %4
     </message>
     <message>
         <location line="+8"/>
-        <source>Can vary +/- %1 upiv per input.</source>
+        <source>Can vary +/- %1 ucbr per input.</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -3235,7 +3235,7 @@ To enable AutoMint change &apos;enablezeromint=0&apos; to &apos;enablezeromint=1
     <message>
         <location line="+308"/>
         <location line="+52"/>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation type="unfinished"></translation>
     </message>
     <message>
@@ -6516,7 +6516,7 @@ Please be patient...</source>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <location filename="../forms/zcbrcontroldialog.ui" line="+20"/>
         <source>Select zCBR to Spend</source>

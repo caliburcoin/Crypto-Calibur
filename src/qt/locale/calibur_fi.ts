@@ -2508,7 +2508,7 @@
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

@@ -1130,8 +1130,8 @@ Adresse: %4
         <translation>Denne tekstmarkør bliver rød, hvis en modtageradresse modtager et beløb mindre end %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Kan variere +/- %1 opiv pr input.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Kan variere +/- %1 ocbr pr input.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2430,8 +2430,8 @@ For at aktivere AutoMint-ændring 'enablezeromint = 0' til 'enablezeromint = 1' 
         <translation>PRIVATLIV</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Indtast en mængde Piv for at konvertere til zPiv</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Indtast en mængde cbr for at konvertere til ZCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -4525,11 +4525,11 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Spent zCBR</source>
-        <translation>Brugt zPiv</translation>
+        <translation>Brugt ZCBR</translation>
     </message>
     <message>
         <source>Received CBR from zCBR</source>
-        <translation>Modtaget Piv fra zPiv</translation>
+        <translation>Modtaget cbr fra ZCBR</translation>
     </message>
     <message>
         <source>Minted Change as zCBR from zCBR Spend</source>
@@ -4756,7 +4756,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Received CBR from zCBR</source>
-        <translation>Modtaget Piv fra zPiv</translation>
+        <translation>Modtaget cbr fra ZCBR</translation>
     </message>
     <message>
         <source>Zerocoin Spend, Change in zCBR</source>
@@ -4828,7 +4828,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Vælg zCBR for at bruge</translation>
@@ -4907,7 +4907,7 @@ Enten mint højere nomineringer (så færre input er nødvendige) eller reducere
     </message>
     <message>
         <source>Enable automatic wallet backups triggered after each zCBR minting (0-1, default: %u)</source>
-        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver zPiv-mintning (0-1, standard: %u)</translation>
+        <translation>Aktivér automatiske wallet-sikkerhedskopier udløst efter hver ZCBR-mintning (0-1, standard: %u)</translation>
     </message>
     <message>
         <source>Enable or disable staking functionality for CBR inputs (0-1, default: %u)</source>

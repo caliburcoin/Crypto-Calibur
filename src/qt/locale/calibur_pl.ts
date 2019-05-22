@@ -1148,8 +1148,8 @@ MultiWysyłlka: %1</translation>
         <translation>Ta etykieta zmienia kolor na czerwony, jeśli odbiorca otrzymuje mniej niż %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Zmienia się +/- %1 upiv</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Zmienia się +/- %1 ucbr</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2544,8 +2544,8 @@ Aby włączyć AutoMint zmień "enablezeromint = 0" na "enablezeromint = 1" w pl
         <translation>PRYWATNOŚĆ</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Wprowadź ilość Piv, aby przekonwertować na zCBR</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Wprowadź ilość cbr, aby przekonwertować na zCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -5081,7 +5081,7 @@ Proszę być cierpliwym...</translation>
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Wybierz zCBR do wydania</translation>

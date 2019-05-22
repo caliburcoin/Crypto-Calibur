@@ -1,4 +1,5 @@
-// Copyright (c) 2017-2018 The CALIBUR developers
+// Copyright (c) 2017-2018 The CALIBUR Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -35,7 +36,7 @@ public:
 // zCBRStake can take two forms
 // 1) the stake candidate, which is a zcmint that is attempted to be staked
 // 2) a staked zcbr, which is a zcspend that has successfully staked
-class CZPivStake : public CStakeInput
+class CZCBRStake : public CStakeInput
 {
 private:
     uint32_t nChecksum;
@@ -44,7 +45,7 @@ private:
     uint256 hashSerial;
 
 public:
-    explicit CZPivStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
+    explicit CZCBRStake(libzerocoin::CoinDenomination denom, const uint256& hashSerial)
     {
         this->denom = denom;
         this->hashSerial = hashSerial;
@@ -52,7 +53,7 @@ public:
         fMint = true;
     }
 
-    explicit CZPivStake(const libzerocoin::CoinSpend& spend);
+    explicit CZCBRStake(const libzerocoin::CoinSpend& spend);
 
     CBlockIndex* GetIndexFrom() override;
     bool GetTxFrom(CTransaction& tx) override;
@@ -69,13 +70,13 @@ public:
     uint32_t GetChecksum();
 };
 
-class CPivStake : public CStakeInput
+class CCBRStake : public CStakeInput
 {
 private:
     CTransaction txFrom;
     unsigned int nPosition;
 public:
-    CPivStake()
+    CCBRStake()
     {
         this->pindexFrom = nullptr;
     }

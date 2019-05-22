@@ -219,7 +219,7 @@ public:
     std::string ResetMintZerocoin();
     std::string ResetSpentZerocoin();
     void ReconsiderZerocoins(std::list<CZerocoinMint>& listMintsRestored, std::list<CDeterministicMint>& listDMintsRestored);
-    void ZPivBackupWallet();
+    void ZCBRBackupWallet();
     bool GetZerocoinKey(const CBigNum& bnSerial, CKey& key);
     bool CreateZCBROutPut(libzerocoin::CoinDenomination denomination, CTxOut& outMint, CDeterministicMint& dMint);
     bool GetMint(const uint256& hashSerial, CZerocoinMint& mint);
@@ -350,7 +350,7 @@ public:
         return fEnableZeromint || fEnableAutoConvert;
     }
 
-    void setZPivAutoBackups(bool fEnabled)
+    void setZCBRAutoBackups(bool fEnabled)
     {
         fBackupMints = fEnabled;
     }

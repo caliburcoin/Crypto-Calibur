@@ -1,5 +1,6 @@
 // Copyright (c) 2012-2017 The Bitcoin Core developers
-// Copyright (c) 2016-2017 The CALIBUR developers
+// Copyright (c) 2016-2017 The CALIBUR Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -13,7 +14,7 @@
  * for both caliburd and calibur-qt, to make it harder for attackers to
  * target servers or GUI users specifically.
  */
-const std::string CLIENT_NAME("Calibur Core");
+const std::string CLIENT_NAME("CALIBUR Core");
 
 /**
  * Client version number
@@ -82,9 +83,9 @@ const std::string CLIENT_DATE(BUILD_DATE);
 static std::string FormatVersion(int nVersion)
 {
     if (nVersion % 100 == 0)
-        return strprintf("%d.%d.%d", nVersion / 1000000, (nVersion / 20000) % 100, (nVersion / 100) % 100);
+        return strprintf("%d.%d.%d", nVersion / 1000000, (nVersion / 10000) % 100, (nVersion / 100) % 100);
     else
-        return strprintf("%d.%d.%d.%d", nVersion / 1000000, (nVersion / 20000) % 100, (nVersion / 100) % 100, nVersion % 100);
+        return strprintf("%d.%d.%d.%d", nVersion / 1000000, (nVersion / 10000) % 100, (nVersion / 100) % 100, nVersion % 100);
 }
 
 std::string FormatFullVersion()

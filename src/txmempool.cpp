@@ -1,6 +1,7 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
-// Copyright (c) 2016-2018 The CALIBUR developers
+// Copyright (c) 2016-2018 The CALIBUR Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -95,7 +96,7 @@ public:
     {
         if (fee < CFeeRate(0))
             return false;
-        if (fee.GetFeePerK() > minRelayFee.GetFeePerK() * 20000)
+        if (fee.GetFeePerK() > minRelayFee.GetFeePerK() * 10000)
             return false;
         return true;
     }
@@ -335,7 +336,7 @@ public:
         filein >> nFileBestSeenHeight;
         size_t numEntries;
         filein >> numEntries;
-        if (numEntries <= 0 || numEntries > 20000)
+        if (numEntries <= 0 || numEntries > 10000)
             throw runtime_error("Corrupt estimates file. Must have between 1 and 10k entries.");
 
         std::vector<CBlockAverage> fileHistory;

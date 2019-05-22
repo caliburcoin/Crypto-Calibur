@@ -1106,8 +1106,8 @@ Višestruko slanje: %1</translation>
         <translation>Ova oznaka postaje crvena ako neki primatelj prima iznos manji od %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Može varirati +/- %1 upiv po unosu.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Može varirati +/- %1 ucbr po unosu.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2392,8 +2392,8 @@ Da biste omogućili, promjenite postavke AutoMint 'enablezeromint=0' na 'enablez
         <translation>PRIVATNOST</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Unesite iznos Piv za pretvorbu u zCBR</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Unesite iznos cbr za pretvorbu u zCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -4762,7 +4762,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Odabrani zCBR za utrošiti</translation>

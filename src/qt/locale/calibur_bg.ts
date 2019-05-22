@@ -1106,8 +1106,8 @@ Address: %4
         <translation>Етикета става червен, когато получателя ще получи сума по-малка от %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Може да има разлика от +/- %1 upiv на вх.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Може да има разлика от +/- %1 ucbr на вх.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2381,7 +2381,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
         <translation>КОНФИДЕНЦИАЛНОСТ</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
+        <source>Enter an amount of cbr to convert to zCBR</source>
         <translation>Въведете колко CBR  да се конвертират в zCBR</translation>
     </message>
     <message>
@@ -4750,7 +4750,7 @@ Either mint higher denominations (so fewer inputs are needed) or reduce the amou
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Изберете zCBR за Изпращане</translation>

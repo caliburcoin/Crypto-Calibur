@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The CALIBUR developers
+// Copyright (c) 2015-2017 The CALIBUR Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -47,7 +48,7 @@ class CActiveMasternode;
 #define OBFUSCATION_RELAY_SIG 3
 
 static const CAmount OBFUSCATION_COLLATERAL = (10 * COIN);
-static const CAmount OBFUSCATION_POOL_MAX = (99999.99 * COIN);
+static const CAmount OBFUSCATION_POOL_MAX = (919999.99 * COIN);
 
 extern CObfuscationPool obfuScationPool;
 extern CObfuScationSigner obfuScationSigner;

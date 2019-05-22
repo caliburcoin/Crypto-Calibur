@@ -1098,8 +1098,8 @@ MultiSend: %1</translation>
         <translation>Ši etiketė taps raudona, jei gavėjas gaus sumą mažesnę už %1</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Gali skirtis +/- %1 upiv kiekvienoje įvestyje.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Gali skirtis +/- %1 ucbr kiekvienoje įvestyje.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2220,7 +2220,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     <message>
         <source>zCBR Control</source>
-        <translation>zPiv Kontrolė</translation>
+        <translation>ZCBR Kontrolė</translation>
     </message>
     <message>
         <source>zCBR Selected:</source>
@@ -3401,7 +3401,7 @@ Nesubrendusios: patvirtintos, bet mažiau nei 1 konvertacijos to pačio nominalo
     </message>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>0</source>
         <translation>0</translation>

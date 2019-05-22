@@ -1,5 +1,6 @@
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2017 The CALIBUR developers
+// Copyright (c) 2015-2017 The CALIBUR Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT/X11 software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -570,7 +571,7 @@ void CObfuscationPool::Check()
     }
 
     // reset if we're here for 10 seconds
-    if ((state == POOL_STATUS_ERROR || state == POOL_STATUS_SUCCESS) && GetTimeMillis() - lastTimeChanged >= 20000) {
+    if ((state == POOL_STATUS_ERROR || state == POOL_STATUS_SUCCESS) && GetTimeMillis() - lastTimeChanged >= 10000) {
         LogPrint("obfuscation", "CObfuscationPool::Check() -- timeout, RESETTING\n");
         UnlockCoins();
         SetNull();
@@ -837,7 +838,7 @@ void CObfuscationPool::CheckTimeout()
     }
 
     int addLagTime = 0;
-    if (!fMasterNode) addLagTime = 20000; //if we're the client, give the server a few extra seconds before resetting.
+    if (!fMasterNode) addLagTime = 10000; //if we're the client, give the server a few extra seconds before resetting.
 
     if (state == POOL_STATUS_ACCEPTING_ENTRIES || state == POOL_STATUS_QUEUE) {
         c = 0;
@@ -2028,7 +2029,7 @@ int CObfuscationPool::GetDenominationsByAmount(CAmount nAmount, int nDenomTarget
             bool fAccepted = false;
             if ((nDenomTarget & (1 << 0)) && v == ((100 * COIN) + 100000)) {
                 fAccepted = true;
-            } else if ((nDenomTarget & (1 << 1)) && v == ((10 * COIN) + 20000)) {
+            } else if ((nDenomTarget & (1 << 1)) && v == ((10 * COIN) + 10000)) {
                 fAccepted = true;
             } else if ((nDenomTarget & (1 << 2)) && v == ((1 * COIN) + 1000)) {
                 fAccepted = true;

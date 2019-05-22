@@ -2410,8 +2410,8 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
         <translation>GİZLİLİK</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>ZPiv'e dönüştürmek için bir miktar Piv girin</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>ZCBR'e dönüştürmek için bir miktar cbr girin</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -2419,7 +2419,7 @@ To enable AutoMint change 'enablezeromint=0' to 'enablezeromint=1' in calibur.co
     </message>
     <message>
         <source>zCBR Selected:</source>
-        <translation>zPiv Seçildi:</translation>
+        <translation>ZCBR Seçildi:</translation>
     </message>
     <message>
         <source>Quantity Selected:</source>
@@ -4506,7 +4506,7 @@ Ya daha yüksek mezhepleri daraltın (daha az girdi gereklidir) veya harcama mik
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Adet</translation>

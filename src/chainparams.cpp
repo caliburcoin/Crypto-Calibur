@@ -1,7 +1,8 @@
 // Copyright (c) 2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The CALIBUR developers
+// Copyright (c) 2015-2018 The PIVX Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -53,10 +54,10 @@ static void convertSeed6(std::vector<CAddress>& vSeedsOut, const SeedSpec6* data
 // + Contains no strange transactions
 static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
-    (0, uint256("0x000004c5d19a8d6e4b90f4a2ac3d3cba446056475c9cbc9e624d5b457c32d546")); //!< Network split here
+    (0, uint256("000004a569ea41b08b5b31e212a0d0c105e8f3bfe9c8c4753e6aa14ccf6e528c")); //!< Network split here
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1558176515, // * UNIX timestamp of last checkpoint block
+    1558547800, // * UNIX timestamp of last checkpoint block
     400,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     200        // * estimated number of transactions per day after checkpoint
@@ -64,10 +65,10 @@ static const Checkpoints::CCheckpointData data = {
 
 static Checkpoints::MapCheckpoints mapCheckpointsTestnet =
     boost::assign::map_list_of
-    (0, uint256("0x000004c5d19a8d6e4b90f4a2ac3d3cba446056475c9cbc9e624d5b457c32d546"));
+    (0, uint256("0x01"));
 static const Checkpoints::CCheckpointData dataTestnet = {
     &mapCheckpointsTestnet,
-    1558176515,
+    1558490762,
     200,
     250};
 
@@ -75,37 +76,10 @@ static Checkpoints::MapCheckpoints mapCheckpointsRegtest =
     boost::assign::map_list_of(0, uint256("0x001"));
 static const Checkpoints::CCheckpointData dataRegtest = {
     &mapCheckpointsRegtest,
-    1558176515,
+    1558488267,
     0,
     100};
 
-void MineGenesis(CBlock genesis) {
-if(genesis.GetHash() != uint256("0x01"))
-        {
-            printf("Looking for genesis block...\n");
-            uint256 hashTarget;
-	    hashTarget.SetCompact(genesis.nBits);
-            while(uint256(genesis.GetHash()) > hashTarget)
-            {
-                ++genesis.nNonce;
-                if (genesis.nNonce == 0)
-                {
-                    printf("NONCE WRAPPED, incrementing time");
-                    std::cout << std::string("NONCE WRAPPED, incrementing time:\n");
-                    ++genesis.nTime;
-                }
-                if (genesis.nNonce % 10000 == 0)
-                {
-                    printf("Mainnet: nonce %08u: hash = %s \n", genesis.nNonce, genesis.GetHash().ToString().c_str());
-                }
-            }
-            printf("merkle root: %s\n", genesis.hashMerkleRoot.ToString().c_str());
-            printf("block.nTime = %u \n", genesis.nTime);
-            printf("block.nNonce = %u \n", genesis.nNonce);
-            printf("block.GetHash = %s\n", genesis.GetHash().ToString().c_str());
-        }
-	system("pause");
-}
 	
 libzerocoin::ZerocoinParams* CChainParams::Zerocoin_Params(bool useModulusV1) const
 {
@@ -144,7 +118,7 @@ public:
         vAlertPubKey = ParseHex("045a0ec48e9d85ef64d95ab0b23837b4039ffc27e231a0f01820e53f9b8716e949c02ec3910ff109d0dec8a135c64c289db1bf5df488c312b7e25a5157c834bab0");
         nDefaultPort = 55555;
         bnProofOfWorkLimit = ~uint256(0) >> 20; // CALIBUR starting difficulty is 1 / 2^12
-        nSubsidyHalvingInterval = 210000;
+        nSubsidyHalvingInterval = 100000;
         nMaxReorganizationDepth = 100;
         nEnforceBlockUpgradeMajority = 8100; // 75%
         nRejectBlockOutdatedMajority = 10260; // 95%
@@ -157,7 +131,7 @@ public:
         nMaxMoneyOut = 100000000 * COIN;
 
         /** Height or Time Based Activations **/
-        nLastPOWBlock = 100;
+        nLastPOWBlock = 101;
         nModifierUpdateBlock = INT_MAX;
         nZerocoinStartHeight = INT_MAX;
         nZerocoinStartTime = INT_MAX; // October 17, 2017 4:30:00 AM
@@ -186,7 +160,7 @@ public:
          *     CTxOut(nValue=50.00000000, scriptPubKey=0xA9037BAC7050C479B121CF)
          *   vMerkleTree: e0028e
          */
-        const char* pszTimestamp = "U.S. News & World Report Jan 28 2016 With His Absence, Trump Dominates Another Debate";
+        const char* pszTimestamp = "Calibur Deadline";
         CMutableTransaction txNew;
         txNew.vin.resize(1);
         txNew.vout.resize(1);
@@ -197,13 +171,13 @@ public:
         genesis.hashPrevBlock = 0;
         genesis.hashMerkleRoot = genesis.BuildMerkleTree();
         genesis.nVersion = 1;
-        genesis.nTime = 1558176515;
+        genesis.nTime = 1558547800;
         genesis.nBits = 0x1e0ffff0;
-        genesis.nNonce = 78430248;
-	//MineGenesis(genesis);
+        genesis.nNonce = 951311;
+//	MineGenesis(genesis);
         hashGenesisBlock = genesis.GetHash();
-        assert(hashGenesisBlock == uint256("0x000004c5d19a8d6e4b90f4a2ac3d3cba446056475c9cbc9e624d5b457c32d546"));
-        assert(genesis.hashMerkleRoot == uint256("0x02e8b0a16cd4f22c3e9cb005457dc21f060eb82373be9d332443718176f4d9f2"));
+        assert(hashGenesisBlock == uint256("000004a569ea41b08b5b31e212a0d0c105e8f3bfe9c8c4753e6aa14ccf6e528c"));
+        assert(genesis.hashMerkleRoot == uint256("f94eab1bdb106ee1a968f0aad29c476fdb3006bb601311a2ba216143027a755e"));
 
         vSeeds.push_back(CDNSSeedData("206.189.185.119","206.189.185.119"));     // Primary DNS Seeder from Fuzzbawls
         vSeeds.push_back(CDNSSeedData("192.241.130.15","192.241.130.15"));    // Secondary DNS Seeder from Fuzzbawls
@@ -507,3 +481,4 @@ bool SelectParamsFromCommandLine()
     SelectParams(network);
     return true;
 }
+

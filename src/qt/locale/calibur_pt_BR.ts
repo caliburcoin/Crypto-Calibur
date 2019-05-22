@@ -3614,7 +3614,7 @@ https://www.transifex.com/calibur-project/calibur-project-translations</translat
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Quantity</source>
         <translation>Quantia</translation>

@@ -1122,8 +1122,8 @@ MultiEnvío: %1</translation>
         <translation>Esta etiqueta se vuelve roja, si algún destinatario recibe una cantidad menor que %1.</translation>
     </message>
     <message>
-        <source>Can vary +/- %1 upiv per input.</source>
-        <translation>Puede variar +/- %1 upiv por entrada.</translation>
+        <source>Can vary +/- %1 ucbr per input.</source>
+        <translation>Puede variar +/- %1 ucbr por entrada.</translation>
     </message>
     <message>
         <source>(no label)</source>
@@ -2451,8 +2451,8 @@ Para habilitar AutoMint cambie 'enablezeromint = 0' a 'enablezeromint = 1' en ca
         <translation>PRIVACIDAD</translation>
     </message>
     <message>
-        <source>Enter an amount of Piv to convert to zCBR</source>
-        <translation>Introduzca la cantidad de CBR que desea convertir a zPiv</translation>
+        <source>Enter an amount of cbr to convert to zCBR</source>
+        <translation>Introduzca la cantidad de CBR que desea convertir a ZCBR</translation>
     </message>
     <message>
         <source>zCBR Control</source>
@@ -4820,7 +4820,7 @@ O mint las denominaciones más altas (por lo tanto, se necesitan menos datos) o 
     </message>
 </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     <message>
         <source>Select zCBR to Spend</source>
         <translation>Selecciona zCBR para Gastar</translation>

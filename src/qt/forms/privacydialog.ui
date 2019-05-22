@@ -378,7 +378,7 @@
                            </size>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Piv to convert to zCBR</string>
+                           <string>Enter an amount of cbr to convert to zCBR</string>
                           </property>
                           <property name="text">
                            <string>Mint Zerocoin</string>
@@ -430,7 +430,7 @@
                            </font>
                           </property>
                           <property name="toolTip">
-                           <string>Enter an amount of Piv to convert to zCBR</string>
+                           <string>Enter an amount of cbr to convert to zCBR</string>
                           </property>
                           <property name="text">
                            <string>0.000 000 00 CBR</string>
@@ -729,21 +729,21 @@
                          <number>0</number>
                         </property>
                         <item>
-                         <widget class="QPushButton" name="pushButtonZPivControl">
+                         <widget class="QPushButton" name="pushButtonZCBRControl">
                           <property name="text">
                            <string>zCBR Control</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected">
+                         <widget class="QLabel" name="labelZCBRSelected">
                           <property name="text">
                            <string>zCBR Selected:</string>
                           </property>
                          </widget>
                         </item>
                         <item>
-                         <widget class="QLabel" name="labelzPivSelected_int">
+                         <widget class="QLabel" name="labelZCBRSelected_int">
                           <property name="text">
                            <string>0</string>
                           </property>

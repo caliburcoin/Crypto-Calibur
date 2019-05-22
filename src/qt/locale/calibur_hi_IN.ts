@@ -335,7 +335,7 @@
     <name>WalletView</name>
     </context>
 <context>
-    <name>ZPivControlDialog</name>
+    <name>ZCBRControlDialog</name>
     </context>
 <context>
     <name>calibur-core</name>

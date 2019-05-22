@@ -1,7 +1,8 @@
 // Copyright (c) 2009-2010 Satoshi Nakamoto
 // Copyright (c) 2009-2014 The Bitcoin developers
 // Copyright (c) 2014-2015 The Dash developers
-// Copyright (c) 2015-2018 The CALIBUR developers
+// Copyright (c) 2015-2018 The PIVX Developers 
+ //Copyright (c) 2019 The Calibur developers
 // Distributed under the MIT software license, see the accompanying
 // file COPYING or http://www.opensource.org/licenses/mit-license.php.
 
@@ -84,11 +85,11 @@ bool fClearSpendCache = false;
 unsigned int nStakeMinAge = 60 * 60;
 int64_t nReserveBalance = 0;
 
-/** Fees smaller than this (in upiv) are considered zero fee (for relaying and mining)
+/** Fees smaller than this (in uCBR) are considered zero fee (for relaying and mining)
  * We are ~100 times smaller then bitcoin now (2015-06-23), set minRelayTxFee only 10 times higher
  * so it's still 10 times lower comparing to bitcoin.
  */
-CFeeRate minRelayTxFee = CFeeRate(20000);
+CFeeRate minRelayTxFee = CFeeRate(10000);
 
 CTxMemPool mempool(::minRelayTxFee);
 
@@ -1490,10 +1491,10 @@ bool AcceptToMemoryPool(CTxMemPool& pool, CValidationState& state, const CTransa
             }
         }
 
-        if (fRejectInsaneFee && nFees > ::minRelayTxFee.GetFee(nSize) * 20000)
+        if (fRejectInsaneFee && nFees > ::minRelayTxFee.GetFee(nSize) * 10000)
             return error("AcceptToMemoryPool: : insane fees %s, %d > %d",
                 hash.ToString(),
-                nFees, ::minRelayTxFee.GetFee(nSize) * 20000);
+                nFees, ::minRelayTxFee.GetFee(nSize) * 10000);
 
 
         bool fCLTVHasMajority = CBlockIndex::IsSuperMajority(5, chainActive.Tip(), Params().EnforceBlockUpgradeMajority());
@@ -1700,10 +1701,10 @@ bool AcceptableInputs(CTxMemPool& pool, CValidationState& state, const CTransact
             }
         }
 
-        if (fRejectInsaneFee && nFees > ::minRelayTxFee.GetFee(nSize) * 20000)
+        if (fRejectInsaneFee && nFees > ::minRelayTxFee.GetFee(nSize) * 10000)
             return error("AcceptableInputs: : insane fees %s, %d > %d",
                 hash.ToString(),
-                nFees, ::minRelayTxFee.GetFee(nSize) * 20000);
+                nFees, ::minRelayTxFee.GetFee(nSize) * 10000);
 
         bool fCLTVHasMajority = CBlockIndex::IsSuperMajority(5, chainActive.Tip(), Params().EnforceBlockUpgradeMajority());
 
@@ -1901,11 +1902,11 @@ int64_t GetBlockValue(int nHeight)
 
     }
 
-    int64_t nSubsidy = 0;
+        int64_t nSubsidy = 0;
     if (nHeight == 0) {
         nSubsidy = 0 * COIN;
-    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight >= 1) {
-        nSubsidy = 50000 * COIN;
+    } else if (nHeight <= Params().LAST_POW_BLOCK() && nHeight > 0) {   
+		nSubsidy = 50000 * COIN;
     } else if (nHeight <= 100000 && nHeight > Params().LAST_POW_BLOCK()) {
         nSubsidy = 35 * COIN;
     } else if (nHeight <= 200000 && nHeight >= 100001) {
@@ -1934,7 +1935,7 @@ int64_t GetBlockValue(int nHeight)
         nSubsidy = 39 * COIN;
     } else if (nHeight <= 4791959 && nHeight >= 1300001) {
         nSubsidy = 12 * COIN;
-	} else {
+        } else {
         nSubsidy = 4 * COIN;
     }
     return nSubsidy;
@@ -2175,23 +2176,20 @@ CAmount GetSeeSaw(const CAmount& blockValue, int nMasternodeCount, int nHeight)
     return ret;
 }
 
-int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool iszdogecStake){
+int64_t GetMasternodePayment(int nHeight, int64_t blockValue, int nMasternodeCount, bool isZCBRStake)
+{
     int64_t ret = 0;
 
     if (Params().NetworkID() == CBaseChainParams::TESTNET) {
         if (nHeight < 200)
             return 0;
     }
-	
-	// initial blocks have no mn reward
-	if (nHeight <= 100) {
-	      ret = blockValue  / 100 * 0;
-	} else if (nHeight > 100) {
-		  ret = blockValue  / 100 * 70; //70%
-		
+
+    if (nHeight <= 165) {
+	ret = (blockValue / 100) * 0;
+	} else if (nHeight > 165) {
+		ret = (blockValue / 100) * 70;
 	}
-			
-	
     return ret;
 }
 
@@ -3066,7 +3064,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     // two in the chain that violate it. This prevents exploiting the issue against nodes in their
     // initial block download.
     bool fEnforceBIP30 = (!pindex->phashBlock) || // Enforce on CreateNewBlock invocations which don't have a hash.
-                         !((pindex->nHeight == 0 && pindex->GetBlockHash() == uint256("000004c5d19a8d6e4b90f4a2ac3d3cba446056475c9cbc9e624d5b457c32d546"))); //||
+                         !((pindex->nHeight == 0 && pindex->GetBlockHash() == uint256("00000351c682c00d9b6f9e08bfd7bd0c24f2272423dd6c4a66f7f042026b93a6"))); //||
                              //(pindex->nHeight == 91880 && pindex->GetBlockHash() == uint256("0x00000000000743f190a18c5577a3c2d2a1f610ae9601ac046a38084ccb7cd721")));
     if (fEnforceBIP30) {
         BOOST_FOREACH (const CTransaction& tx, block.vtx) {
@@ -3229,7 +3227,7 @@ bool ConnectBlock(const CBlock& block, CValidationState& state, CBlockIndex* pin
     pindex->nMoneySupply = nMoneySupplyPrev + nValueOut - nValueIn;
     pindex->nMint = pindex->nMoneySupply - nMoneySupplyPrev + nFees;
 
-//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zPivSpent: %s\n",
+//    LogPrintf("XX69----------> ConnectBlock(): nValueOut: %s, nValueIn: %s, nFees: %s, nMint: %s zCBRSpent: %s\n",
 //              FormatMoney(nValueOut), FormatMoney(nValueIn),
 //              FormatMoney(nFees), FormatMoney(pindex->nMint), FormatMoney(nAmountZerocoinSpent));
 
@@ -4534,7 +4532,7 @@ bool ContextualCheckZerocoinStake(int nHeight, CStakeInput* stake)
     if (nHeight < Params().Zerocoin_Block_V2_Start())
         return error("%s: zCBR stake block is less than allowed start height", __func__);
 
-    if (CZPivStake* zCBR = dynamic_cast<CZPivStake*>(stake)) {
+    if (CZCBRStake* zCBR = dynamic_cast<CZCBRStake*>(stake)) {
         CBlockIndex* pindexFrom = zCBR->GetIndexFrom();
         if (!pindexFrom)
             return error("%s: failed to get index associated with zCBR stake checksum", __func__);
@@ -4638,17 +4636,17 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
         CTransaction &stakeTxIn = block.vtx[1];
 
         // Inputs
-        std::vector<CTxIn> pivInputs;
+        std::vector<CTxIn> CBRInputs;
         std::vector<CTxIn> zCBRInputs;
 
         for (const CTxIn& stakeIn : stakeTxIn.vin) {
             if(stakeIn.scriptSig.IsZerocoinSpend()){
                 zCBRInputs.push_back(stakeIn);
             }else{
-                pivInputs.push_back(stakeIn);
+                CBRInputs.push_back(stakeIn);
             }
         }
-        const bool hasCBRInputs = !pivInputs.empty();
+        const bool hasCBRInputs = !CBRInputs.empty();
         const bool hasZCBRInputs = !zCBRInputs.empty();
 
         // ZC started after PoS.
@@ -4671,8 +4669,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 if(tx.IsCoinStake()) continue;
                 if(hasCBRInputs)
                     // Check if coinstake input is double spent inside the same block
-                    for (const CTxIn& pivIn : pivInputs){
-                        if(pivIn.prevout == in.prevout){
+                    for (const CTxIn& CBRIn : CBRInputs){
+                        if(CBRIn.prevout == in.prevout){
                             // double spent coinstake input inside block
                             return error("%s: double spent coinstake input inside block", __func__);
                         }
@@ -4709,7 +4707,7 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
                 for (const CTransaction &t : bl.vtx) {
                     for (const CTxIn &in: t.vin) {
                         // Loop through every input of the staking tx
-                        for (const CTxIn &stakeIn : pivInputs) {
+                        for (const CTxIn &stakeIn : CBRInputs) {
                             // if it's already spent
 
                             // First regular staking check
@@ -4741,8 +4739,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
 
             // Now that this loop if completed. Check if we have zCBR inputs.
             if(hasZCBRInputs){
-                for (const CTxIn& zPivInput : zCBRInputs) {
-                    CoinSpend spend = TxInToZerocoinSpend(zPivInput);
+                for (const CTxIn& zCBRInput : zCBRInputs) {
+                    CoinSpend spend = TxInToZerocoinSpend(zCBRInput);
 
                     // First check if the serials were not already spent on the forked blocks.
                     CBigNum coinSerial = spend.getCoinSerialNumber();
@@ -4804,8 +4802,8 @@ bool AcceptBlock(CBlock& block, CValidationState& state, CBlockIndex** ppindex, 
             }
         } else {
             if(!isBlockFromFork)
-                for (const CTxIn& zPivInput : zCBRInputs) {
-                        CoinSpend spend = TxInToZerocoinSpend(zPivInput);
+                for (const CTxIn& zCBRInput : zCBRInputs) {
+                        CoinSpend spend = TxInToZerocoinSpend(zCBRInput);
                         if (!ContextualCheckZerocoinSpend(stakeTxIn, spend, pindex, 0))
                             return state.DoS(100,error("%s: main chain ContextualCheckZerocoinSpend failed for tx %s", __func__,
                                     stakeTxIn.GetHash().GetHex()), REJECT_INVALID, "bad-txns-invalid-zcbr");
