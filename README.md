@@ -36,11 +36,11 @@ CALIBUR Core integration/staging repository
 <tr><td>Phase 6</td><td>600001-700000</td><td>39 CBR</td><td>70% (27.3 CBR)</td><td>30% (11.7 CBR)</td></tr>
 <tr><td>Phase 7</td><td>700001-800000</td><td>40 CBR</td><td>70% (28 CBR)</td><td>30% (12 CBR)</td></tr>
 <tr><td>Phase 8</td><td>800001-900000</td><td>41 CBR</td><td>70% (28.7 CBR)</td><td>30% (12.3 CBR)</td></tr>
-<tr><td>Phase 5</td><td>900001-1000000</td><td>42 CBR</td><td>70% (29.4 CBR)</td><td>30% (12.6 CBR)</td></tr>
-<tr><td>Phase 6</td><td>1000001-1100000</td><td>43 CBR</td><td>70% (30.1 CBR)</td><td>30% (12.9 CBR)</td></tr>
-<tr><td>Phase 7</td><td>1100001-1200000</td><td>44 CBR</td><td>70% (30.8 CBR)</td><td>30% (13.2 CBR)</td></tr>
-<tr><td>Phase 7</td><td>1200001-1300000</td><td>39 CBR</td><td>70% (27.3 CBR)</td><td>30% (11.7 CBR)</td></tr>
-<tr><td>Phase 7</td><td>1300001-4791958</td><td>12 CBR</td><td>70% (8.3 CBR)</td><td>30% (3.6 CBR)</td></tr>
-<tr><td>Phase 7</td><td>4791959-4791959</td><td>4 CBR</td><td>70% (2.8 CBR)</td><td>30% (1.2 CBR)</td></tr>
-<tr><td>Phase X</td><td>1154203-∞</td><td>6 CBR</td><td>84% (5 CBR/zCBR)</td><td>16% (1 CBR)</td></tr>
+<tr><td>Phase 9</td><td>900001-1000000</td><td>42 CBR</td><td>70% (29.4 CBR)</td><td>30% (12.6 CBR)</td></tr>
+<tr><td>Phase 10</td><td>1000001-1100000</td><td>43 CBR</td><td>70% (30.1 CBR)</td><td>30% (12.9 CBR)</td></tr>
+<tr><td>Phase 11</td><td>1100001-1200000</td><td>44 CBR</td><td>70% (30.8 CBR)</td><td>30% (13.2 CBR)</td></tr>
+<tr><td>Phase 12</td><td>1200001-1300000</td><td>39 CBR</td><td>70% (27.3 CBR)</td><td>30% (11.7 CBR)</td></tr>
+<tr><td>Phase 13</td><td>1300001-4791958</td><td>12 CBR</td><td>70% (8.3 CBR)</td><td>30% (3.6 CBR)</td></tr>
+<tr><td>Phase 14</td><td>4791959-4791959</td><td>4 CBR</td><td>70% (2.8 CBR)</td><td>30% (1.2 CBR)</td></tr>
+
 </table>
