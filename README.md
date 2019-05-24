@@ -5,9 +5,11 @@ CALIBUR Core integration/staging repository
 <table>
 <tr><td>Algo</td><td>Quark</td></tr>
 <tr><td>Block Time</td><td>60 Seconds</td></tr>
-
 <tr><td>Max Coin Supply </td><td>100m</td></tr>
 <tr><td>Premine</td><td>5%</td></tr>
+<tr><td>Block Distrubution</td><td>70% MN, 30% Stakers</td></tr>
+<tr><td>Ticker</td><td>CBR</td></tr>
+<tr><td>Maturity</td><td>1 Hour</td></tr>
 </table>
 
 
