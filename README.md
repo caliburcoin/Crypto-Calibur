@@ -10,6 +10,7 @@ CALIBUR Core integration/staging repository
 <tr><td>Block Distrubution</td><td>70% MN, 30% Stakers</td></tr>
 <tr><td>Ticker</td><td>CBR</td></tr>
 <tr><td>Maturity</td><td>1 Hour</td></tr>
+<tr><td>Masternode Collateral</td><td>20000</td></tr>
 </table>
 
 
