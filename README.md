@@ -20,7 +20,7 @@ CALIBUR Core integration/staging repository
 <tr><td>1-100</td><td>100% (5m CBR)</td></tr>
 </table>
 
-### PoS Rewards Breakdown
+### PoS/MN Rewards Breakdown
 
 <table>
 <th>Phase</th><th>Block Height</th><th>Reward</th><th>Masternodes</th><th>Stakers</th>
